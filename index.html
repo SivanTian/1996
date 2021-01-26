@@ -1,280 +1,194 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Design</title>
+    <meta name="title" content="Spline - Design tool for 3D web experiences">
+    <meta name="description" content="Create web-based 3D experiences">
+    <meta name="p:domain_verify" content="6f6562556c0579ebedd9e323b0d24409"/>
+    <link rel="icon" type="image/png" href="_assets/_images/icon_favicon16x16.png" sizes="16x16" />
+	<link rel="icon" type="image/png" href="_assets/_images/icon_favicon32x32.png" sizes="32x32" />
 
-<html lang="zh-CN" class="no-js">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>tianzhiwei.cn</title>
-		<meta name="description" content="An implementation of Gil Huybrecht's Outdoors design" />
-		<meta name="keywords" content="template, web design, html, javascript, layout, css, slide out" />
-		<meta name="author" content="Codrops" />
-		<link rel="shortcut icon" href="favicon.ico">
-		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="css/base.css" />
-		<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
-		<!--script src="//tympanus.net/codrops/adpacks/analytics.js"></script-->
-	</head>
-	<body class="loading">
-		<svg class="hidden">
-			<symbol id="icon-arrow" viewBox="0 0 24 24">
-				<title>arrow</title>
-				<polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 "/>
-			</symbol>
-			<symbol id="icon-drop" viewBox="0 0 24 24">
-				<title>drop</title>
-				<path d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z"/><path d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z"/>
-			</symbol>
-			<symbol id="icon-menu" viewBox="0 0 24 13">
-				<title>menu</title>
-				<path d="M.75 1.515h22.498a.75.75 0 0 0 0-1.5H.75a.75.75 0 0 0 0 1.5zM23.248 5.265H8.168a.75.75 0 0 0 0 1.5h15.08a.75.75 0 0 0 0-1.5zM23.248 10.514H4.322a.75.75 0 0 0 0 1.5h18.926a.75.75 0 0 0 0-1.5z"/>
-			</symbol>
-			<symbol id="icon-dot" viewBox="0 0 24 24">
-				<title>dot</title>
-				<path d="M11.5 9c-.69 0-1.28.244-1.768.732A2.41 2.41 0 0 0 9 11.5c0 .69.244 1.28.732 1.767A2.409 2.409 0 0 0 11.5 14c.69 0 1.28-.244 1.768-.733A2.408 2.408 0 0 0 14 11.5c0-.69-.244-1.28-.732-1.768A2.408 2.408 0 0 0 11.5 9z"/>
-			</symbol>
-			<symbol id="icon-cross" viewBox="0 0 24 24">
-				<title>cross</title>
-				<path d="M11.449 11.962l-5.1 5.099a.363.363 0 1 0 .513.512L12 12.436l5.137 5.137a.361.361 0 0 0 .513 0 .363.363 0 0 0 0-.512l-5.099-5.1 5.102-5.102a.363.363 0 1 0-.512-.513L12 11.487l-5.141-5.14a.363.363 0 0 0-.513.512l5.103 5.103z"/>
-			</symbol>
-			<symbol id="icon-arrowlong" viewBox="0 0 32 11">
-				<title>arrow-long</title>
-				<path d="M27.166.183a.619.619 0 0 0-.878 0 .619.619 0 0 0 0 .878l2.735 2.735H.768a.624.624 0 0 0 0 1.248h28.254L26.287 7.77a.619.619 0 0 0 0 .878.617.617 0 0 0 .441.183c.163 0 .32-.061.442-.183l3.796-3.796a.623.623 0 0 0-.005-.878L27.166.183z"/>
-			</symbol>
-			<symbol id="icon-close" viewBox="0 0 24 24">
-				<title>close</title>
-				<path d="M21 4.565L19.435 3 12 10.435 4.565 3 3 4.565 10.435 12 3 19.435 4.565 21 12 13.565 19.435 21 21 19.435 13.565 12z"/>
-			</symbol>
-			<symbol id="icon-navup" viewBox="0 0 50 50">
-				<title>navup</title>
-				<path d="M20.259 28.211l5.07-5.03 5.075 5.034a.36.36 0 0 0 .51 0 .356.356 0 0 0 0-.506l-5.323-5.28a.404.404 0 0 0-.135-.084.364.364 0 0 0-.384.08l-5.324 5.28a.356.356 0 0 0 0 .506c.141.14.37.14.51 0z" />
-			</symbol>
-			<symbol id="icon-navdown" viewBox="0 0 50 50">
-				<title>navdown</title>
-				<path d="M20.259 22.43l5.07 5.03 5.075-5.034a.36.36 0 0 1 .51 0c.14.14.14.366 0 .506l-5.323 5.28a.404.404 0 0 1-.135.084.364.364 0 0 1-.384-.081l-5.324-5.28a.356.356 0 0 1 0-.505c.141-.14.37-.14.51 0z" />
-			</symbol>
-			<symbol id="icon-grid" viewBox="0 0 24 24">
-				<title>grid</title>
-				<path d="M8.982 8.982h5.988v5.988H8.982zM0 0h5.988v5.988H0zM8.982 17.965h5.988v5.988H8.982zM0 8.982h5.988v5.988H0zM0 17.965h5.988v5.988H0zM17.965 0h5.988v5.988h-5.988zM8.982 0h5.988v5.988H8.982zM17.965 8.982h5.988v5.988h-5.988zM17.965 17.965h5.988v5.988h-5.988z"/>
-			</symbol>
-		</svg>
-		<main>
-			<div class="sections">
-				<header class="sections__header">
-					<h1 class="title">Tianzhiwei</h1>
-				</header>
-				<!-- codrops links -->
-				<div class="codrops-links">
-					<a class="codrops-icon codrops-icon--prev" href="index.html" target="_blank" title="Back to the article"><svg class="icon icon--arrow"><use xlink:href="#icon-arrow"></use></svg></a>
-					<a class="codrops-icon codrops-icon--drop" href="Navigation.html" target="_blank" title="Visit Codrops"><svg class="icon icon--drop"><use xlink:href="#icon-drop"></use></svg></a>
-				</div>
-				<!-- menu -->
-				<nav class="menu">
-					<ul class="menu__inner">
-						<li class="menu__item"><a class="menu__item-link" href="index.html">首页</a></li>
-						<li class="menu__item"><a class="menu__item-link" href="Navigation.html">网址导航</a></li>
-						<li class="menu__item"><a class="menu__item-link" href="gu.html">架子鼓</a></li>
-						<li class="menu__item"><a class="menu__item-link" href="moban/public/moban.html">模版</a></li>
-					</ul>
-					<div class="menu__toggle">
-						<span class="menu__toggle-inner menu__toggle-inner--open">
-							<svg class="icon icon--menu"><use xlink:href="#icon-menu"></use></svg>
-						</span>
-						<span class="menu__toggle-inner menu__toggle-inner--close">
-							<svg class="icon icon--close"><use xlink:href="#icon-close"></use></svg>
-						</span>
-					</div>
-				</nav>
-				<!-- facts expander with toggles; content for each is in its section -->
-				<div class="facts">
-					<div class="facts__toggle">
-						<span class="facts__toggle-inner facts__toggle-inner--more">
-							<svg class="icon icon--dot"><use xlink:href="#icon-dot"></use></svg>
-							<span class="facts__toggle-text">查看更多</span>
-						</span>
-						<span class="facts__toggle-inner facts__toggle-inner--less">
-							<svg class="icon icon--cross"><use xlink:href="#icon-cross"></use></svg>
-							<span class="facts__toggle-text">返回</span>
-						</span>
-					</div>
-					<button class="button-contentclose">
-						<svg class="icon icon--close"><use xlink:href="#icon-close"></use></svg>
-					</button>
-				</div>
-				<div class="tlinks">Collect from <a href="https://www.tianzhiwei.cn/Navigation.html"  title="设计博客">设计博客</a></div>
-				<!-- index -->
-				<div class="sections__index">
-					<span class="sections__index-current">
-						<span class="sections__index-inner">01</span>
-					</span>
-					<span class="sections__index-total">03</span>
-				</div>
-				<!-- navigation down -->
-				<nav class="sections__nav">
-					<button class="sections__nav-item sections__nav-item--prev">
-						<svg class="icon icon--navup"><use xlink:href="#icon-navup"></use></svg>
-					</button>
-					<button class="sections__nav-item sections__nav-item--next">
-						<svg class="icon icon--navdown"><use xlink:href="#icon-navdown"></use></svg>
-					</button>
-				</nav>
-				<!-- sections -->
-				<section class="section section--current">
-					<div class="section__content">
-						<h2 class="section__title">Hello!</h2>
-						<p class="section__description"><span class="section__description-inner">Hello，欢迎来到小阿田的个人网站，我是一名 UI/UX Designer，微信公众号：小阿田的设计笔记；合作交流/WeChat: tzw19960909 需备注：）</span></p>
-					</div>
-					<div class="section__img">
-						<div class="section__img-inner" style="background-image: url(img/1.jpg)"></div>
-					</div>
-					<div class="section__more">
-						<div class="section__more-inner section__more-inner--bg1">
-							<span class="section__more-text">查看站酷设计平台</span>
-							<a href="https://wei960705.zcool.com.cn/" target="_blank" class="section__more-link">
-								<span class="section__more-linktext">点击查看</span>
-								<svg class="icon icon--arrowlong"><use xlink:href="#icon-arrowlong"></use></svg>
-							</a>
-						</div>
-					</div>
-					<div class="section__expander"></div>
-					<ul class="section__facts">
-						<li class="section__facts-item">
-							<h3 class="section__facts-title">Hello, 我叫田志伟</h3>
-							<span class="section__facts-detail">我是一名 UI/UX Designer</span>
-						</li>
-						<li class="section__facts-item">
-							<h3 class="section__facts-title">欢迎关注我的微信公众号</h3>
-							<span class="section__facts-detail">小阿田的设计笔记</span>
-						</li>
-						<li class="section__facts-item">
-							<h3 class="section__facts-title">WeChat</h3>
-							<span class="section__facts-detail">tzw19960909请备注来源...</span>
-						</li>
-						<li class="section__facts-item section__facts-item--clickable" data-gallery="gallery1">
-							<div class="section__facts-img">
-								<img src="img/thumb1.jpg" alt="Some image"/>
-								<svg class="icon icon--grid"><use xlink:href="#icon-grid"></use></svg>
-							</div>
-							<h3 class="section__facts-title">点击上方图片</h3>
-							<span class="section__facts-detail">查看设计作品</span>
-						</li>
-					</ul>
-					<div class="section__gallery" id="gallery1">
-						<h3 class="section__gallery-item section__gallery-item--title">More works</h3>
-						<a class="section__gallery-item" href="#"><img src="img/thumb1.jpg" alt="Some image"/></a>
-						<a class="section__gallery-item" href="#"><img src="img/thumb2.jpg" alt="Some image"/></a>
-						<a class="section__gallery-item" href="#"><img src="img/thumb3.jpg" alt="Some image"/></a>
-						<a class="section__gallery-item" href="#"><img src="img/thumb4.jpg" alt="Some image"/></a>
-						<a class="section__gallery-item" href="#"><img src="img/thumb5.jpg" alt="Some image"/></a>
-						<a class="section__gallery-item" href="#"><img src="img/thumb6.jpg" alt="Some image"/></a>
-					</div>
-				</section><!--/ section -->
-				<section class="section">
-					<div class="section__content">
-						<h2 class="section__title">About</h2>
-						<p class="section__description"><span class="section__description-inner">嗨！我是小阿田，一个居住在北京的设计师，专注于图形视觉设计、用户界面设计、用户体验研究和品牌标识设计。</span></p>
-					</div>
-					<div class="section__img">
-						<div class="section__img-inner" style="background-image: url(img/2.jpg)"></div>
-					</div>
-					<div class="section__more">
-						<div class="section__more-inner section__more-inner--bg2">
-							<span class="section__more-text">查看UI中国设计平台</span>
-							<a href="https://i.ui.cn/ucenter/167309.html" class="section__more-link">
-								<span class="section__more-linktext">点击查看</span>
-								<svg class="icon icon--arrowlong"><use xlink:href="#icon-arrowlong"></use></svg>
-							</a>
-						</div>
-					</div>
-					<div class="section__expander"></div>
-					<ul class="section__facts">
-						<li class="section__facts-item">
-							<h3 class="section__facts-title">做更好的设计坚持不懈的热爱与好奇。</h3>
-							<span class="section__facts-detail">做更好的设计。</span>
-						</li>
-						<li class="section__facts-item">
-							<h3 class="section__facts-title">欢迎关注我的微信公众号</h3>
-							<span class="section__facts-detail">小阿田的设计笔记</span>
-						</li>
-						<li class="section__facts-item">
-							<h3 class="section__facts-title">WeChat</h3>
-							<span class="section__facts-detail">tzw-2022请备注来源...</span>
-						</li>
-						<li class="section__facts-item section__facts-item--clickable" data-gallery="gallery2">
-							<div class="section__facts-img">
-								<img src="img/thumb2.jpg" alt="Some image"/>
-								<svg class="icon icon--grid"><use xlink:href="#icon-grid"></use></svg>
-							</div>
-							<h3 class="section__facts-title">点击上方图片</h3>
-							<span class="section__facts-detail">查看设计作品</span>
-						</li>
-					</ul>
-					<div class="section__gallery" id="gallery2">
-						<h3 class="section__gallery-item section__gallery-item--title">More works</h3>
-						<a class="section__gallery-item" href="#"><img src="img/thumb5.jpg" alt="Some image"/></a>
-						<a class="section__gallery-item" href="#"><img src="img/thumb6.jpg" alt="Some image"/></a>
-						<a class="section__gallery-item" href="#"><img src="img/thumb1.jpg" alt="Some image"/></a>
-						<a class="section__gallery-item" href="#"><img src="img/thumb2.jpg" alt="Some image"/></a>
-						<a class="section__gallery-item" href="#"><img src="img/thumb3.jpg" alt="Some image"/></a>
-						<a class="section__gallery-item" href="#"><img src="img/thumb4.jpg" alt="Some image"/></a>
-					</div>
-					
-				</section><!--/ section -->
-			<section class="section">
-						<div class="section__content">
-							<h2 class="section__title">Blog</h2>
-							<p class="section__description"><span class="section__description-inner">Hi，我是小阿田，这里是一个供设计师学习交流的平台，在这里我会不定期分享一些精彩的文章、译文和优秀的作品、教程，欢迎感兴趣的朋友订阅、转发，期待和大家共同进步。</span></p>
-						</div>
-						<div class="section__img">
-							<div class="section__img-inner" style="background-image: url(img/3.jpg)"></div>
-						</div>
-						<div class="section__more">
-							<div class="section__more-inner section__more-inner--bg2">
-								<span class="section__more-text">查看简书平台</span>
-								<a href="https://www.jianshu.com/u/35698bd1527c" class="section__more-link">
-									<span class="section__more-linktext">点击查看</span>
-									<svg class="icon icon--arrowlong"><use xlink:href="#icon-arrowlong"></use></svg>
-								</a>
-							</div>
-						</div>
-						<div class="section__expander"></div>
-						<ul class="section__facts">
-							<li class="section__facts-item">
-								<h3 class="section__facts-title">设计师网址导航</h3>
-								<span class="section__facts-detail">点右上角的那个水珠哦</span>
-							</li>
-							<li class="section__facts-item">
-								<h3 class="section__facts-title">欢迎关注我的微信公众号</h3>
-								<span class="section__facts-detail">小阿田的设计笔记</span>
-							</li>
-							<li class="section__facts-item">
-								<h3 class="section__facts-title">WeChat</h3>
-								<span class="section__facts-detail">tzw-2022请备注来源...</span>
-							</li>
-							<li class="section__facts-item section__facts-item--clickable" data-gallery="gallery2">
-								<div class="section__facts-img">
-									<img src="img/thumb2.jpg" alt="Some image"/>
-									<svg class="icon icon--grid"><use xlink:href="#icon-grid"></use></svg>
-								</div>
-								<h3 class="section__facts-title">点击上方图片</h3>
-								<span class="section__facts-detail">查看设计作品</span>
-							</li>
-						</ul>
-						<div class="section__gallery" id="gallery2">
-							<h3 class="section__gallery-item section__gallery-item--title">More works</h3>
-							<a class="section__gallery-item" href="#"><img src="img/thumb5.jpg" alt="Some image"/></a>
-							<a class="section__gallery-item" href="#"><img src="img/thumb6.jpg" alt="Some image"/></a>
-							<a class="section__gallery-item" href="#"><img src="img/thumb1.jpg" alt="Some image"/></a>
-							<a class="section__gallery-item" href="#"><img src="img/thumb2.jpg" alt="Some image"/></a>
-							<a class="section__gallery-item" href="#"><img src="img/thumb3.jpg" alt="Some image"/></a>
-							<a class="section__gallery-item" href="#"><img src="img/thumb4.jpg" alt="Some image"/></a>
-						</div>
-			</div><!--/ sections -->
-		</main>
-		<script src="js/imagesloaded.pkgd.min.js"></script>
-		<script src="js/charming.min.js"></script>
-		<script src="js/anime.min.js"></script>
-		<script src="js/main.js"></script>
-	</body>
-	
+
+    <link rel='stylesheet' href='https://d33wubrfki0l68.cloudfront.net/css/a12668072c73b1fd0cad08ff2bc31497f286db68/_css/styles.min.css'/>
+  
+  	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://spline.design/">
+	<meta property="og:title" content="Spline - Design tool for 3D web experiences">
+	<meta property="og:description" content="Create web-based 3D experiences">
+	<meta property="og:image" content="https://spline.design/_assets/_images/spline_image_banner.png">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://spline.design/">
+	<meta property="twitter:title" content="Spline - Design tool for 3D web experiences">
+	<meta property="twitter:description" content="Create web-based 3D experiences">
+    <meta property="twitter:image" content="https://spline.design/_assets/_images/spline_image_banner.png">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150686419-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-150686419-1');
+    </script>
+
+    <script type="text/javascript">
+        (function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script")
+        ;r.type="text/javascript"
+        ;r.integrity="sha384-girahbTbYZ9tT03PWWj0mEVgyxtZoyDF9KVZdL+R53PP5wCY0PiVUKq0jeRlMx9M"
+        ;r.crossOrigin="anonymous";r.async=true
+        ;r.src="https://cdn.amplitude.com/libs/amplitude-7.2.1-min.gz.js"
+        ;r.onload=function(){if(!e.amplitude.runQueuedFunctions){
+        console.log("[Amplitude] Error: could not load SDK")}}
+        ;var i=t.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)
+        ;function s(e,t){e.prototype[t]=function(){
+        this._q.push([t].concat(Array.prototype.slice.call(arguments,0)));return this}}
+        var o=function(){this._q=[];return this}
+        ;var a=["add","append","clearAll","prepend","set","setOnce","unset"]
+        ;for(var u=0;u<a.length;u++){s(o,a[u])}n.Identify=o;var c=function(){this._q=[]
+        ;return this}
+        ;var l=["setProductId","setQuantity","setPrice","setRevenueType","setEventProperties"]
+        ;for(var p=0;p<l.length;p++){s(c,l[p])}n.Revenue=c
+        ;var d=["init","logEvent","logRevenue","setUserId","setUserProperties","setOptOut","setVersionName","setDomain","setDeviceId", "enableTracking", "setGlobalUserProperties","identify","clearUserProperties","setGroup","logRevenueV2","regenerateDeviceId","groupIdentify","onInit","logEventWithTimestamp","logEventWithGroups","setSessionId","resetSessionId"]
+        ;function v(e){function t(t){e[t]=function(){
+        e._q.push([t].concat(Array.prototype.slice.call(arguments,0)))}}
+        for(var n=0;n<d.length;n++){t(d[n])}}v(n);n.getInstance=function(e){
+        e=(!e||e.length===0?"$default_instance":e).toLowerCase()
+        ;if(!n._iq.hasOwnProperty(e)){n._iq[e]={_q:[]};v(n._iq[e])}return n._iq[e]}
+        ;e.amplitude=n})(window,document);
+    
+        amplitude.getInstance().init("489a9907ddf824ef0e3f6a66731eb60b");
+    </script>
+
+</head>
+<body class="theme-dark">
+
+
+    <div class="content-container nav-container">
+
+        <nav class="nav">
+            <a href="index.html" class="nav-logo"><img src="icon_favicon32x32.png" alt="Spline"></a>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="http://www.woshipm.com/u/191389">博客</a></li>
+                <li class=""><a href="https://t.1yb.co/g1ol">关于我</a></li>
+
+            </ul>
+        </nav>
+
+    </div>
+
+    <div class="section-title-3d content-3d">
+        <div class="content-container title-3d block-events">
+            
+            <h2 class="content-title"><b class="color-green">Hello，</b>我是小阿田</h2>
+            <p class="content-description">UI/UX设计师 | 公众号@小阿田的设计笔记 | WeChat: tzw-2022</p>
+    
+        </div>
+
+        <div id="container" class="canvas-background-3d">
+                    
+            <canvas id="canvas3d" width="3072" height="818" tabindex="0" style="width: 1536px; height: 409px;"></canvas>            
+        </div>
+    </div>
+
+   
+
+
+    
+    <div class="content content-container">
+
+   
+
+
+
+    <div class="content">
+        <div class="content-container">
+            
+            <h2 class="content-title">公众号 <b class="color-green">小阿田的设计笔记</b></h2>
+            <p class="content-description">分享最优质的设计教程和国内外顶尖设计资源、至今已累计4w+优秀设计师关注、这里有UI、UX、产品、工具、用研、方法论、插画设计体验内容</p>
+            
+            <div class="media-container">
+                <img src="tupian.png" loading="lazy" alt="Spline Experience">
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="content content-last" id="download">
+        <div class="content-container">
+            
+            <h2 class="content-title">一些 <b class="color-green">设计平台地址</b></h2>
+            <p class="content-description">在这里我会不定期分享一些精彩的文章、译文和优秀的作品、教程，欢迎感兴趣的朋友订阅、转发，期待和大家共同进步。
+            </p>
+
+            <div class="cta-secundary-container">
+                <a href="https://wei960705.zcool.com.cn/" class="button-cta">站酷</a>
+                <a href="https://i.ui.cn/ucenter/167309" class="button-cta">UI中国</a>
+                <a href="https://dribbble.com/Tzw_n" class="button-cta">Dribbble</a>
+                
+            </div>
+
+        </div>
+        <div class="section-title-3d content-3d">
+            <div class="canvas-background-3d">
+
+                <iframe src='https://my.spline.design/websiteprimitives03-f22886ea47e7d732fd8a8fd81279ad9b/' frameborder='0'></iframe>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <div class="content content-container footer">
+
+        <div class="feature-text">
+            <h2>联系我 🤓</h2>
+            <p>合作交流/WeChat: tzw-2022 需备注：）
+                
+            <br>
+            <br>
+            <div class="links-container">
+                <a class="link-email" href="">💌 17600376961@163.com</a>
+                <a class="link-email" href="">WeChat: tzw-2022</a>
+            </div>
+
+            </p>
+        </div>
+
+        <div class="social-networks">
+            <a href="Navigation.html" target="_blank">🌈 设计导航</a>
+            <a href="Navigation.html" target="_blank">🌈 设计导航</a>
+            <a href="Navigation.html" target="_blank">🌈 设计导航</a>
+        </div>
+
+        <p>
+            ©2021 - tzw Design.
+            <br>
+   
+        </p>
+
+        
+    </div>
+
+    <script>
+        // Global namespace (backwards-compatibility)
+        var SPE = {};
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src='https://d33wubrfki0l68.cloudfront.net/bundles/ebb7f15f14cfd10ffb2f830afc393bac8ece98df.js'></script>
+
+</body>
 </html>
